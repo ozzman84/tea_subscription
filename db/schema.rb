@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_190705) do
+ActiveRecord::Schema.define(version: 2022_01_14_040635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 2022_01_11_190705) do
     t.string "title"
     t.float "price"
     t.integer "status"
-    t.datetime "frequency"
     t.bigint "customer_id"
     t.bigint "tea_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "frequency"
     t.index ["customer_id"], name: "index_subscriptions_on_customer_id"
     t.index ["tea_id"], name: "index_subscriptions_on_tea_id"
   end
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 2022_01_11_190705) do
     t.string "title"
     t.string "description"
     t.float "temperature"
-    t.time "brew_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "brew_time"
   end
 
   add_foreign_key "subscriptions", "customers"

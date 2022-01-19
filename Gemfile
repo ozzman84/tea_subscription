@@ -30,13 +30,18 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-gem 'pry'
-gem 'rspec-rails', '~> 4.0.1'
-gem 'capybara'
-gem 'launchy'
-gem 'simplecov'
-gem 'shoulda-matchers', '~> 3.1'
-gem 'orderly'
+  gem 'pry'
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'simplecov'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'orderly'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'rubocop'
+  gem 'jsonapi-serializer'
 end
 
 group :development do
