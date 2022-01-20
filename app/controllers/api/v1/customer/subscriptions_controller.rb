@@ -8,7 +8,6 @@ class Api::V1::Customer::SubscriptionsController < ApplicationController
   end
 
   def create
-    tea = Tea.find(params[:tea_id])
     customer = Customer.find(params[:customer_id])
     subscription = customer.subscriptions.create(subscription_params)
     render json: SubscriptionSerializer.add_subscription(subscription), status: 201

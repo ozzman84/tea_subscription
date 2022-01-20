@@ -51,11 +51,15 @@ RSpec.describe 'Customers Requests', type: :request do
       let(:tea) { create(:tea) }
       let(:subscription) { create(:subscription, customer_id: customer.id, tea_id: tea.id) }
 
-      before { patch api_v1_customer_subscription_path(subscription.id) }
+      before { patch api_v1_customer_subscription_path(subscription.id), params: { status: 'cancelled' } }
 
       it 'returns status code 204' do
         expect(response).to have_http_status(204)
       end
+
+      # it 'returns status code 204' do
+      #   expect(json[:data][:attributes][:status]).to eq('cancelled')
+      # end
     end
   end
 end
